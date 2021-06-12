@@ -1,0 +1,19 @@
+﻿@model PassionProject.Models.RecipeDto
+
+@{
+    ViewBag.Title = "DeleteConfirm";
+}
+
+<div><a href="/Recipe/List">Back</a></div>
+
+<h2>Are you sure you want to delete this recipe?</h2>
+
+<h1>@Model.RecipeTitle</h1>
+<p>By: @Model.AppUsername</p>
+<p>Instructions: @Model.RecipeInstructions</p>
+<p>Recipe Type: @Model.RecipeType</p>
+<p>Difficulty Level: @Model.RecipeDifficultyLevel</p>
+
+<form action="/Recipe/Delete/@Model.RecipeID" method="POST">
+    <input type="submit" value="Confirm Delete" />
+</form>

@@ -277,15 +277,13 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\Recipes\default.png" />
+    <Content Include="Content\Images\Recipes\img1.jpg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="jsondata\recipe.json" />
     <None Include="jsondata\ingredient.json" />
     <Content Include="Content\Images\Index\banner.jpg" />
-    <Content Include="Content\Images\Index\img1.jpg" />
-    <Content Include="Content\Images\Index\img2.jpg" />
-    <Content Include="Content\Images\Index\img3.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />

@@ -5,7 +5,7 @@
 
 <div>
     <div id="left-nav">
-        <a href="/Recipe/List" class="button">Back</a>
+        <a href="/Recipe/Details/@Model.RecipeID" class="button">Back</a>
     </div>
     <div id="details-content">
         <h2>Update @Model.RecipeTitle</h2>
@@ -32,7 +32,7 @@
                     <label>Difficulty Level:</label>
                     <label for="RecipeDifficultyLevel">Difficulty Level:</label>
                     <select id="RecipeDifficultyLevel" name="RecipeDifficultyLevel">
-                        @{
+                        /* {
                             var selected = "";
                             if (Model.RecipeDifficultyLevel == "easy")
                             {
@@ -46,10 +46,10 @@
                             {
                                 selected = "selected";
                             }
-                        }
-                        <option value="easy" @selected>Easy</option>
-                        <option value="moderate" @selected>Moderate</option>
-                        <option value="hard" @selected>Hard</option>
+                        } */
+                        <option value="easy">Easy</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="hard">Hard</option>
                     </select>
                 </div>
                 <div>

@@ -13,7 +13,7 @@ Foodpad is a recipe-sharing application where users can browse through recipes a
   
 ## Future Updates/Fixes
 
-- [ ] Fix bug to be able to show recipe image in List
+- [x] Fix bug to be able to show recipe image in List
 - [ ] Add more values to Ingredient entity (e.g. Quantity of the ingredient)
 - [ ] Add a User entity and display associated recipes
 - [ ] Refine layout, CSS and accessibility

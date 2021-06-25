@@ -18,7 +18,7 @@
                 <h3><a href="/Recipe/Details/@recipe.RecipeID">@recipe.RecipeTitle</a></h3>
                 @{
                     string imageurl = "/Content/Images/Recipes/default.png";
-                    if (recipe.RecipeHasPic)
+                    if(recipe.RecipeHasPic)
                     {
                         imageurl = "/Content/Images/Recipes/" + recipe.RecipeID + "." + recipe.PicExtension;
                     }

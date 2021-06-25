@@ -44,7 +44,9 @@ namespace PassionProject.Controllers
                 RecipeDifficultyLevel = a.RecipeDifficultyLevel,
                 Vegan = a.Vegan,
                 Vegetarian = a.Vegetarian,
-                GlutenFree = a.GlutenFree
+                GlutenFree = a.GlutenFree,
+                RecipeHasPic = a.RecipeHasPic,
+                PicExtension = a.PicExtension
 
             }));
 

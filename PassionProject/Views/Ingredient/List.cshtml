@@ -1,0 +1,18 @@
+﻿@model IEnumerable<PassionProject.Models.IngredientDto>
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>Ingredients</h2>
+<p id="tagline">[ The world is your oyster. ]</p>
+
+<div id="right-nav">
+    <a href="New" class="button">Add New Ingredient</a>
+</div>
+
+<div id="details-content">
+@foreach (var ingredient in Model)
+{
+    <h3><a href="/Ingredient/Details/@ingredient.IngredientID">@ingredient.IngredientName</a></h3>
+}
+</div>

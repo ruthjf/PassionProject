@@ -13,22 +13,22 @@ namespace PassionProject.Models
         public int RecipeID { get; set; }
         public string RecipeTitle { get; set; }
         public string RecipeInstructions { get; set; }
-        public string RecipeType { get; set; }
         public string RecipeDifficultyLevel { get; set; }
         // choose from easy, moderate, hard
 
+        public bool Vegan { get; set; }
+        public bool Vegetarian { get; set; }
+        public bool GlutenFree { get; set; }
 
-        // a recipe belongs to one app user
-        // an app user can have many recipes
-        [ForeignKey("AppUsers")]
-        public int? AppUserID { get; set; }
-
-        //navigation property
-        public virtual AppUser AppUsers { get; set; }
+        //data needed for keeping track of recipe images uploaded
+        //images deposited into /Content/Images/Recipes/{id}.{extension}
+        public bool RecipeHasPic { get; set; }
+        public string PicExtension { get; set; }
 
         // bridging table
         // a recipe can have many ingredients
         public ICollection<Ingredient> Ingredients { get; set; }
+
     }
 
     public class RecipeDto
@@ -36,9 +36,12 @@ namespace PassionProject.Models
         public int RecipeID { get; set; }
         public string RecipeTitle { get; set; }
         public string RecipeInstructions { get; set; }
-        public string RecipeType { get; set; }
         public string RecipeDifficultyLevel { get; set; }
-        public string AppUsername { get; set; }
-        public int AppUserID { get; set; }
+        public bool Vegan { get; set; }
+        public bool Vegetarian { get; set; }
+        public bool GlutenFree { get; set; }
+        public bool RecipeHasPic { get; set; }
+        public string PicExtension { get; set; }
+
     }
 }

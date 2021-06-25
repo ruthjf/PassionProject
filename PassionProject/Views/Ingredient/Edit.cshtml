@@ -1,0 +1,24 @@
+﻿@model PassionProject.Models.IngredientDto
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update @Model.IngredientName</h2>
+
+<div class="inner-container">
+    <div id="left-nav">
+        <a href="/Ingredient/List" class="button">Back</a>
+    </div>
+
+    <form action="/Ingredient/Update/@Model.IngredientID" method="POST">
+        <input type="number" style="display:none" name="IngredientID" value="@Model.IngredientID" />
+        <div>
+            <label>Ingredient Name:</label>
+            <input type="text" name="IngredientName" value="@Model.IngredientName" />
+        </div>
+        <div>
+            <input type="submit" value="Update Ingredient" />
+        </div>
+    </form>
+</div>
+

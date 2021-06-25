@@ -4,16 +4,21 @@
     ViewBag.Title = "DeleteConfirm";
 }
 
-<div><a href="/Recipe/List">Back</a></div>
-
-<h2>Are you sure you want to delete this recipe?</h2>
-
-<h1>@Model.RecipeTitle</h1>
-<p>By: @Model.AppUsername</p>
-<p>Instructions: @Model.RecipeInstructions</p>
-<p>Recipe Type: @Model.RecipeType</p>
-<p>Difficulty Level: @Model.RecipeDifficultyLevel</p>
-
-<form action="/Recipe/Delete/@Model.RecipeID" method="POST">
-    <input type="submit" value="Confirm Delete" />
-</form>
+<div class="inner-container">
+    <div id="left-nav">
+        <a href="/Recipe/List" class="button">Back</a>
+    </div>
+    <div class="delete-container">
+        <div class="delete-msg">
+        <p>Are you sure you want to delete this recipe?</p>
+        <form action="/Recipe/Delete/@Model.RecipeID" method="POST">
+            <input type="submit" value="Confirm Delete" class="button" id="del-b" />
+        </form>
+        </div>
+    </div>
+    <div id="details-content">
+        <h2>@Model.RecipeTitle</h2>
+        <p>Instructions: @Model.RecipeInstructions</p>
+        <p>Difficulty Level: @Model.RecipeDifficultyLevel</p>
+    </div>
+</div>

@@ -3,29 +3,62 @@
     ViewBag.Title = "Update";
 }
 
-<h2>Update Recipe</h2>
+<div>
+    <div id="left-nav">
+        <a href="/Recipe/List" class="button">Back</a>
+    </div>
+    <div id="details-content">
+        <h2>Update @Model.RecipeTitle</h2>
 
-<a href="/Recipe/List">Back</a>
-<div><p>You are updating @Model.RecipeTitle</p></div>
-
-<form action="/Recipe/Update/@Model.RecipeID" method="POST">
-    <input type="number" style="display:none" name="RecipeID" value="@Model.RecipeID" />
-    <div>
-        <label>Recipe Title:</label> <input type="text" name="RecipeTitle" value="@Model.RecipeTitle" />
+        <div class="form-container">
+            <form action="/Recipe/Update/@Model.RecipeID" method="POST" enctype="multipart/form-data">
+                <input type="number" style="display:none" name="RecipeID" value="@Model.RecipeID" />
+                <div>
+                    <label>Recipe Title:</label>
+                    <input type="text" name="RecipeTitle" value="@Model.RecipeTitle" />
+                </div>
+                <div>
+                    <textarea name="RecipeInstructions">@Model.RecipeInstructions</textarea>
+                </div>
+                <div>
+                    <label for="Vegan">Vegan</label>
+                    <input type="checkbox" name="Vegan" value="true" @(Model.Vegan ? "checked" : "") />
+                    <label for="Vegetarian">Vegetarian</label>
+                    <input type="checkbox" name="Vegetarian" value="true" @(Model.Vegetarian ? "checked" : "") />
+                    <label for="GlutenFree">Gluten-Free</label>
+                    <input type="checkbox" name="GlutenFree" value="true" @(Model.GlutenFree ? "checked" : "") />
+                </div>
+                <div>
+                    <label>Difficulty Level:</label>
+                    <label for="RecipeDifficultyLevel">Difficulty Level:</label>
+                    <select id="RecipeDifficultyLevel" name="RecipeDifficultyLevel">
+                        @{
+                            var selected = "";
+                            if (Model.RecipeDifficultyLevel == "easy")
+                            {
+                                selected = "selected";
+                            }
+                            else if (Model.RecipeDifficultyLevel == "moderate")
+                            {
+                                selected = "selected";
+                            }
+                            else if (Model.RecipeDifficultyLevel == "hard")
+                            {
+                                selected = "selected";
+                            }
+                        }
+                        <option value="easy" @selected>Easy</option>
+                        <option value="moderate" @selected>Moderate</option>
+                        <option value="hard" @selected>Hard</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="file" name="RecipePic" />
+                </div>
+                <div>
+                    <input type="submit" value="Update Recipe" class="button" />
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        <label>Recipe Instructions:</label> <textarea name="RecipeInstructions">@Model.RecipeInstructions</textarea>
-    </div>
-    <div>
-        <label>Recipe Type:</label> <input type="text" name="RecipeType" value="@Model.RecipeType" />
-    </div>
-    <div>
-        <label>Difficulty Level:</label> <input type="text" name="RecipeDifficultyLevel" value="@Model.RecipeDifficultyLevel" />
-    </div>
-    <div>
-        <label>User ID:</label> <input type="number" name="AppUserID" value="@Model.AppUserID" />
-    </div>
-    <div>
-        <input type="submit" value="Update Recipe" />
-    </div>
-</form>
+</div>

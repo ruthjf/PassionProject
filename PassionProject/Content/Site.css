@@ -1,12 +1,21 @@
-﻿body {
+﻿@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
     padding-top: 50px;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
+    background-color: #fffea4;
+    font-family: 'Roboto', sans-serif;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    padding-bottom: 25px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 4px 6px 6px #906652;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +30,212 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#logo {
+    font-size: 30px;
+}
+
+#navbar {
+    background-color: #fffea4;
+    color: #001440;
+    border: none;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+}
+    #navbar a {
+        color: #001440;
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+    }
+    #navbar a:hover {
+        color: #008177;
+    }
+#navlinks {
+    padding-left: 200px;
+}
+.navbar-brand {
+    font-size: 35px;
+    padding-left: 2em;
+}
+h2 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    font-weight: bold;
+    color: #7c253d;
+}
+h3 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    color: #7c253d;
+}
+a {
+    color: #7c253d;
+}
+a:hover {
+    color: #008177;
+    text-decoration: none;
+}
+#tagline {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    color: #008177;
+}
+#footer {
+    position: absolute;
+    margin-bottom: 0;
+    padding-top: 2em;
+    min-width: 100%;
+}
+#f-text {
+    font-size: 10px;
+    text-align: center;
+}
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-basis: auto;
+}
+.card {
+    width: 250px;
+    height: 250px;
+    border: 1px black solid;
+    padding: 1em;
+    margin: 0.5em;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px #906652;
+    flex: 0 1 auto;
+}
+#right-nav {
+    float: right;
+    width: 150px;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+#right-nav ul {
+    list-style-type: none;
+}
+#right-nav li {
+    display: inline-block;
+}
+#left-nav {
+    width: 200px;
+    float: left;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+.button {
+    background-color: #008177;
+    color: #fff;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+.button:hover {
+    background-color: #7c253d;
+    color: #fff;
+}
+.inner-container {
+    width: 800px;
+    margin: 0 auto;
+}
+#details-content {
+    clear: both;
+}
+
+.delete-container {
+    border: 1px black solid;
+    clear: both;
+    width: 600px;
+    margin: 0 auto;
+    padding-bottom: 1em;
+    border-radius: 10px;
+    box-shadow: 2px 4px 4px #906652;
+}
+.delete-msg p {
+    font-size: 20px;
+}
+.delete-msg {
+    text-align: center;
+    padding: 1em 1em;
+}
+#del-b {
+    margin: 0 auto;
+}
+#del-b:hover {
+    background-color: red;
+}
+.form-container {
+    width: 300px;
+    margin: 0 auto;
+}
+textarea {
+    width: 300px;
+    height: 100px;
+}
+p {
+    white-space: pre-wrap !important;
+}
+.fill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .fill img {
+        flex-shrink: 1;
+        min-width: 100%;
+        min-height: 100%;
+        width: 400px;
+        height: 300px;
+        border-radius: 10px;
+
+    }
+.fill-banner {
+    flex-shrink: 1;
+    min-width: 100%;
+    min-height: 100%;
+    border-radius: 15px;
+    width:1100px;
+    height: 300px;
+    margin-top: 2em;
+}
+.main-col {
+    padding: 6em 6em;
+    border: 3px solid black;
+}
+.main-card {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    border: black 2px solid;
+    margin: 9em auto;
+    box-shadow: 8px 10px #fffea4;
+    padding: 1em 1em;
+}
+    .main-card h2 {
+        padding-bottom: 1.5em;
+    }
+    .main-card p {
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.2em;
+    }
+#xmark {
+    color: red;
+}
+    #xmark:hover {
+        font-weight: bold;
+    }
+.img-details {
+    display: block;
+    max-width: 100%;
+}
+.img-list {
+    height: 160px;
+}
+.center-text {
+    text-align: center;
 }

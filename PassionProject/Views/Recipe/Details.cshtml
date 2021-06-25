@@ -1,14 +1,69 @@
-﻿@model PassionProject.Models.RecipeDto
+﻿@model PassionProject.Models.ViewModels.DetailsRecipe
 @{
     ViewBag.Title = "Details";
 }
 
-<div><a href="/Recipe/List">Back</a></div>
-<div><a href="/Recipe/Edit/@Model.RecipeID">Update</a></div>
-<div><a href="/Recipe/DeleteConfirm/@Model.RecipeID">Delete</a></div>
-
-<h2>@Model.RecipeTitle</h2>
-<p>By: @Model.AppUsername</p>
-<p>Instructions: @Model.RecipeInstructions</p>
-<p>Recipe Type: @Model.RecipeType</p>
-<p>Difficulty Level: @Model.RecipeDifficultyLevel</p>
+<div class="inner-container">
+    <div id="left-nav">
+        <a href="/Recipe/List" class="button">Back</a>
+    </div>
+    <div id="right-nav">
+        <ul>
+            <li><a href="/Recipe/Edit/@Model.SelectedRecipe.RecipeID" class="button">Update</a></li>
+            <li><a href="/Recipe/DeleteConfirm/@Model.SelectedRecipe.RecipeID" class="button">Delete</a></li>
+        </ul>
+    </div>
+    <div id="details-content">
+        <h2>@Model.SelectedRecipe.RecipeTitle</h2>
+        <div class="row">
+            <div class="col-md-6">
+                @{
+                    string imageurl = "/Content/Images/Recipes/default.png";
+                    if (Model.SelectedRecipe.RecipeHasPic)
+                    {
+                        imageurl = "/Content/Images/Recipes/" + Model.SelectedRecipe.RecipeID + "." + Model.SelectedRecipe.PicExtension;
+                    }
+                }
+                <div><img class="img-details" alt="@Model.SelectedRecipe.RecipeTitle" src="@imageurl" /></div>
+            </div>
+            <div class="col-md-6 center-text">
+                <h3>Difficulty Level</h3>
+                <p>@Model.SelectedRecipe.RecipeDifficultyLevel</p>
+                <h3>Recipe Type</h3>
+                <p>Vegan: @Model.SelectedRecipe.Vegan</p>
+                <p>Vegetarian: @Model.SelectedRecipe.Vegetarian</p>
+                <p>Gluten-Free: @Model.SelectedRecipe.GlutenFree</p>
+            </div>
+        </div>
+    </div>
+    <div class="row center-text">
+        <div class="col-md-12">
+            <h3>Instructions</h3>
+            <p>@Model.SelectedRecipe.RecipeInstructions</p>
+        </div>
+    </div>
+    <div class="row center-text">
+        <div class="col-md-12">
+            <h3>Ingredients Needed</h3>
+            @foreach (var ingredient in Model.IngredientsNeeded)
+            {
+                <a href="/Ingredient/Details/@ingredient.IngredientID">@ingredient.IngredientName</a> <a href="/Recipe/UnAssociate/@Model.SelectedRecipe.RecipeID?IngredientID=@ingredient.IngredientID" id="xmark">[x]</a> <br />
+            }
+        </div>
+    </div>
+    <div class="row center-text">
+        <div class="col-md-12">
+            <h3>Add New Ingredient for @Model.SelectedRecipe.RecipeTitle</h3>
+            <h4>Choose an ingredient:</h4>
+            <form method="POST" action="/Recipe/Associate/@Model.SelectedRecipe.RecipeID">
+                <select name="IngredientID">
+                    @foreach (var newingredient in Model.AvailableIngredients)
+                    {
+                        <option value="@newingredient.IngredientID">@newingredient.IngredientName</option>
+                    }
+                </select>
+                <input type="submit" value="Add Ingredient" />
+            </form>
+        </div>
+    </div>
+</div>

@@ -17,5 +17,13 @@ namespace PassionProject.Models
         // bridging table
         // an ingredient can be used in many recipes
         public ICollection<Recipe> Recipes { get; set; }
+
+    }
+
+    // data transfer object, simplified version
+    public class IngredientDto
+    {
+        public int IngredientID { get; set; }
+        public string IngredientName { get; set; }
     }
 }

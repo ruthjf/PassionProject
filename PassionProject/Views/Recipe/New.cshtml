@@ -2,26 +2,49 @@
 @{
     ViewBag.Title = "New";
 }
-
 <h2>Create Recipe</h2>
-<form action="/Recipe/Create" method="POST">
-    <div>
-        <label>Recipe Title:</label> <input type="text" name="RecipeTitle" />
-    </div>
-    <div>
-        <label>Recipe Instructions:</label> <textarea name="RecipeInstructions"></textarea>
-    </div>
-    <div>
-        <label>Recipe Type:</label> <input type="text" name="RecipeType" />
-    </div>
-    <div>
-        <label>Difficulty Level:</label> <input type="text" name="RecipeDifficultyLevel" />
-    </div>
-    <div>
-        <label>User ID:</label> <input type="number" name="AppUserID" />
-    </div> <!-- need to fix this -->
-    <div>
-        <input type="submit" value="Add Recipe" />
-    </div>
-</form>
 
+<div id="left-nav">
+    <a href="List" class="button">Back</a>
+</div>
+
+<div class="inner-container">
+    <div id="details-content">
+        <div class="form-container">
+            <form action="/Recipe/Create" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="RecipeTitle">Recipe Title:</label>
+                    <input type="text" name="RecipeTitle" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <label for="RecipeInstructions">Recipe Instructions:</label>
+                    <textarea name="RecipeInstructions" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Vegan">Vegan</label>
+                    <input type="checkbox" name="Vegan" value="true" />
+                    <label for="Vegetarian">Vegetarian</label>
+                    <input type="checkbox" name="Vegetarian" value="true" />
+                    <label for="GlutenFree">Gluten-Free</label>
+                    <input type="checkbox" name="GlutenFree" value="true" />
+
+                </div>
+                <div>
+                    <label for="RecipeDifficultyLevel">Difficulty Level:</label>
+                    <select id="RecipeDifficultyLevel" name="RecipeDifficultyLevel" class="form-control">
+                        <option value="easy">Easy</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div>
+                    <input type="file" name="RecipePic" class="form-control" />
+                </div>
+                <div>
+                    <input type="submit" value="Add Recipe" class="button"/>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

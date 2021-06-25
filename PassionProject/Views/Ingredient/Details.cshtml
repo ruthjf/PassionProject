@@ -1,0 +1,28 @@
+﻿@model PassionProject.Models.ViewModels.DetailsIngredient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="inner-container">
+    <div id="left-nav">
+        <a href="/Ingredient/List" class="button">Back</a>
+    </div>
+    <div id="right-nav">
+        <ul>
+            <li><a href="/Ingredient/Edit/@Model.SelectedIngredient.IngredientID" class="button">Update</a></li>
+            <li><a href="/Ingredient/DeleteConfirm/@Model.SelectedIngredient.IngredientID" class="button">Delete</a></li>
+        </ul>
+    </div>
+    <div id="details-content">
+        <h2>@Model.SelectedIngredient.IngredientName</h2>
+    </div>
+    <div>
+        <h3>Related Recipes</h3>
+        @foreach(var recipe in Model.RelatedRecipes)
+            {
+              <a href="/Recipe/Details/@recipe.RecipeID">@recipe.RecipeTitle</a><br />
+            }
+    </div>
+
+</div>

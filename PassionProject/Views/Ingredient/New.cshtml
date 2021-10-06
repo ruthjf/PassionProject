@@ -1,19 +1,23 @@
 ﻿
 @{
-    ViewBag.Title = "New";
+    ViewBag.Title = "Add Ingredient";
 }
 
+<h2>Add New Ingredient</h2>
 
 <div id="left-nav">
     <a href="/Ingredient/List" class="button">Back</a>
 </div>
 
-<h2>Create New Ingredient</h2>
-<form action="/Ingredient/Create" method="POST">
-    <div>
-        <label>Ingredient Name:</label> <input type="text" name="IngredientName" />
+<div class="inner-container">
+    <div class="form-container">
+        <form action="/Ingredient/Create" method="POST">
+            <div class="form-group">
+                <label>Ingredient Name:</label><input type="text" name="IngredientName" />
+            </div>
+            <div>
+                <input type="submit" value="Add Ingredient" />
+            </div>
+        </form>
     </div>
-    <div>
-        <input type="submit" value="Add Ingredient" />
-    </div>
-</form>
+</div>

@@ -59,13 +59,17 @@ namespace PassionProject.Controllers
 
 
         // GET: Ingredient/List
-        public ActionResult List()
+        public ActionResult List(string SearchKey = null)
         {
             //objective: communicate with ingredient data api to retrieve a list of ingredients
             // curl "https://localhost:44301/api/ingredientdata/listingredients"
 
             //establish URL communication
             string url = "ingredientdata/listingredients";
+            if (SearchKey != null)
+            {
+                url += "?SearchKey=" + SearchKey;
+            }
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             //Debug.WriteLine("The response code is ");

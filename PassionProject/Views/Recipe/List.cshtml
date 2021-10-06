@@ -1,11 +1,18 @@
 ﻿@model IEnumerable<PassionProject.Models.RecipeDto>
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Recipes";
 }
 
 
 <h2>Recipes</h2>
 <p id="tagline">[ The world is your oyster &#x1F9AA; ]</p>
+
+<div>
+    <form action="/Recipe/List" method="GET">
+        <input type="text" name="SearchKey" />
+        <input type="submit" value="Search" />
+    </form>
+</div>
 
 <div id="right-nav">
     <a href="New" class="button">Add New Recipe</a>
@@ -23,7 +30,9 @@
                         imageurl = "/Content/Images/Recipes/" + recipe.RecipeID + "." + recipe.PicExtension;
                     }
                 }
-                <div><img src="@imageurl" class="img-list" alt="@recipe.RecipeTitle" /></div>
+                <div id="card-img">
+                    <a href="/Recipe/Details/@recipe.RecipeID"><img src="@imageurl" class="img-list" alt="@recipe.RecipeTitle" /></a>
+                </div>
             </div>
         }
     </div>

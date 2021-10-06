@@ -1,47 +1,58 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - foodpad</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <script src="https://cdn.tiny.cloud/1/o06ah3xxhbtmie3u78o4c1igzz7o8muuw4guepz7z1b7m4pl/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
-    <div id="navbar">
-        <div class="navbar navbar-inverse navbar-fixed-top" id="navbar">
-            <div class="container">
-                <div class="navbar-header" id="logo">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    @Html.ActionLink("foodpad", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav" id="navlinks">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("Recipes", "List", "Recipe")</li>
-                        <li>@Html.ActionLink("Ingredients", "List", "Ingredient")</li>
-                    </ul>
-                    @Html.Partial("_LoginPartial")
+    <header>
+        <div id="">
+            <div class="navbar navbar-inverse navbar-fixed-top" id="nav-cust">
+                <div class="container">
+                    <div class="navbar-header" id="logo">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        @Html.ActionLink("foodpad", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav" id="navlinks">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Recipes", "List", "Recipe")</li>
+                            <li>@Html.ActionLink("Ingredients", "List", "Ingredient")</li>
+                        </ul>
+                        @Html.Partial("_LoginPartial")
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-    </div>
-    <footer id="footer">
-        <div id="f-text">
-        <p>&copy; @DateTime.Now.Year - HTTP5204 Ruth Frogoso's Passion Project</p>
+    </header>
+    <main>
+        <div class="container body-content">
+            @RenderBody()
+        </div>
+    </main>
+    <footer>
+        <div id="footer">
+            <div id="f-text">
+                <p>&copy; @DateTime.Now.Year - HTTP5204 Ruth Frogoso's Passion Project</p>
+            </div>
         </div>
     </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+        tinymce.init({
+            selector: 'textarea'
+        });
+    </script>
 </body>
 </html>

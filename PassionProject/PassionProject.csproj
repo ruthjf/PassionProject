@@ -258,6 +258,10 @@
     <Compile Include="Migrations\202106250250014_added-pic.Designer.cs">
       <DependentUpon>202106250250014_added-pic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202110031650132_recipexingredient.cs" />
+    <Compile Include="Migrations\202110031650132_recipexingredient.Designer.cs">
+      <DependentUpon>202110031650132_recipexingredient.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AppUser.cs" />
@@ -265,6 +269,7 @@
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Recipe.cs" />
+    <Compile Include="Models\RecipeXIngredient.cs" />
     <Compile Include="Models\ViewModels\DetailsIngredient.cs" />
     <Compile Include="Models\ViewModels\DetailsRecipe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -286,6 +291,8 @@
     <Content Include="Content\Images\Index\banner.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -412,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106250250014_added-pic.resx">
       <DependentUpon>202106250250014_added-pic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202110031650132_recipexingredient.resx">
+      <DependentUpon>202110031650132_recipexingredient.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

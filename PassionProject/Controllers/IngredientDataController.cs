@@ -28,10 +28,16 @@ namespace PassionProject.Controllers
         /// GET: api/IngredientData/ListIngredients
         /// </example>
         [HttpGet]
-        public IEnumerable<IngredientDto> ListIngredients()
+        public IEnumerable<IngredientDto> ListIngredients(string SearchKey = null)
         {
             List<Ingredient> Ingredients = db.Ingredients.ToList();
             List<IngredientDto> IngredientDtos = new List<IngredientDto>();
+
+            // searching the database with the searchkey
+            if (SearchKey != null)
+            {
+                Ingredients = db.Ingredients.Where(a => a.IngredientName.Contains(SearchKey)).ToList();
+            }
 
             Ingredients.ForEach(a => IngredientDtos.Add(new IngredientDto()
             {

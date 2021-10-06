@@ -36,19 +36,19 @@ textarea {
     font-size: 30px;
 }
 
-#navbar {
+#nav-cust {
     background-color: #fffea4;
     color: #001440;
     border: none;
     font-family: 'Raleway', sans-serif;
     font-size: 15px;
 }
-    #navbar a {
+    #nav-cust a {
         color: #001440;
         font-family: 'Raleway', sans-serif;
         font-weight: bold;
     }
-    #navbar a:hover {
+    #nav-cust a:hover {
         color: #008177;
     }
 #navlinks {
@@ -108,6 +108,13 @@ a:hover {
     border-radius: 10px;
     box-shadow: 2px 4px 4px #906652;
     flex: 0 1 auto;
+}
+.card a {
+    text-align: center;
+}
+#card-img {
+    display: flex;
+    justify-content: center;
 }
 #right-nav {
     float: right;
@@ -222,6 +229,7 @@ p {
     .main-card p {
         font-family: 'Raleway', sans-serif;
         font-size: 1.2em;
+        font-weight: bold;
     }
 #xmark {
     color: red;
@@ -237,6 +245,16 @@ p {
     height: 160px;
     width: 180px;
 }
+.img-list:hover {
+    opacity: 50%;
+}
 .center-text {
     text-align: center;
+}
+#index-text h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 4em;
+    text-align: center;
+    padding-top: 2em;
 }

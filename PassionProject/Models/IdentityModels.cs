@@ -26,13 +26,16 @@ namespace PassionProject.Models
         }
 
         // add app user entity to our system
-        public DbSet<AppUser> AppUsers { get; set; }
+        //public DbSet<AppUser> AppUsers { get; set; }
 
-        // add recipe entity to our system
+        // add a recipe entity to our system
         public DbSet<Recipe> Recipes { get; set; }
 
-        // add ingredient entity to our system
+        // add an ingredient entity to our system
         public DbSet<Ingredient> Ingredients { get; set; }
+
+        public DbSet<RecipeXIngredient> RecipeXIngredients { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

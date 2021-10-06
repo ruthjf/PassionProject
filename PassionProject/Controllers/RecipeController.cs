@@ -58,7 +58,7 @@ namespace PassionProject.Controllers
 
 
         // GET: Recipe/List
-        public ActionResult List()
+        public ActionResult List(string SearchKey = null)
         {
 
             //objective: communicate with recipe data api to retrieve a list of recipes
@@ -66,6 +66,10 @@ namespace PassionProject.Controllers
 
             // establish URL communication
             string url = "recipedata/listrecipes";
+            if (SearchKey != null)
+            {
+                url += "?SearchKey=" + SearchKey;
+            }
             HttpResponseMessage response = client.GetAsync(url).Result;
 
             //Debug.WriteLine("The response code is ");

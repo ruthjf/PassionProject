@@ -1,18 +1,25 @@
 ﻿@model IEnumerable<PassionProject.Models.IngredientDto>
 @{
-    ViewBag.Title = "List";
+    ViewBag.Title = "Ingredients";
 }
 
 <h2>Ingredients</h2>
 <p id="tagline">[ The world is your oyster &#x1F9AA; ]</p>
+
+<div>
+    <form action="/Ingredient/List" method="GET">
+        <input type="text" name="SearchKey" />
+        <input type="submit" value="Search" />
+    </form>
+</div>
 
 <div id="right-nav">
     <a href="New" class="button">Add New Ingredient</a>
 </div>
 
 <div id="details-content">
-@foreach (var ingredient in Model)
-{
-    <h3><a href="/Ingredient/Details/@ingredient.IngredientID">@ingredient.IngredientName</a></h3>
-}
+            @foreach (var ingredient in Model)
+            {
+                <h3><a href="/Ingredient/Details/@ingredient.IngredientID">@ingredient.IngredientName</a></h3>
+            }
 </div>

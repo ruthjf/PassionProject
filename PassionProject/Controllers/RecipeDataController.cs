@@ -31,10 +31,16 @@ namespace PassionProject.Controllers
         /// GET: api/RecipeData/ListRecipes
         /// </example>
         [HttpGet]
-        public IEnumerable<RecipeDto> ListRecipes()
+        public IEnumerable<RecipeDto> ListRecipes(string SearchKey = null)
         {
             List<Recipe> Recipes = db.Recipes.ToList();
             List<RecipeDto> RecipeDtos = new List<RecipeDto>();
+
+            // searching the database with the searchkey
+            if(SearchKey != null)
+            {
+                Recipes = db.Recipes.Where(a => a.RecipeTitle.Contains(SearchKey)).ToList();
+            }
 
             Recipes.ForEach(a => RecipeDtos.Add(new RecipeDto()
             {
